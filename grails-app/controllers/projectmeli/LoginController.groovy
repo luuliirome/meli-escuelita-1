@@ -12,6 +12,7 @@ class LoginController {
     
 	def login(){
 		
+
 		Usuario user = UsuarioService.getUserByEmail(params.mail);
 		
 		if (user ==  null){

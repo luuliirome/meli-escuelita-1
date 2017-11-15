@@ -99,6 +99,7 @@
 			</g:if>
 			<g:if test="${texto== 'Email no esta registrado'}">
 				 <font color="red">Email no esta registrado</font> 
+
 			</g:if>
 		</g:if>
 	</body>
