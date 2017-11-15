@@ -4,6 +4,8 @@ import projectmeli.Usuario;
 
 class LoginController {
 
+	static allowedMethods = [loginCheck: 'POST'	]
+	
     def index() {
 		render(view: "/index")
 	}
@@ -17,6 +19,7 @@ class LoginController {
 		else{
 			render(view: "/index", model: [texto: "Error de Logueo"])
 		}
-		
 	}
+
+	
 }
