@@ -89,12 +89,13 @@
 		</div>
 	
 		<g:if test="${texto != 'Logueado'}">
-				<form action="login" controller="login" method="POST">
-				<input type="text" name="mail">
-				<input type="password" name="password">
-				<button type="submit">Log In</button>
-		</form>
-			<g:if test="${texto== 'Error de Logueo'}">
+		<g:form action="login" controller="login" method="POST">
+			<input type="text" name="mail"> 
+			<input type="password" name="password">
+			<button type="submit">Log In</button>
+		</g:form>
+
+		<g:if test="${texto == 'Error de Logueo'}">
 				 <font color="red">Error de validacion</font> 
 			</g:if>
 		</g:if>

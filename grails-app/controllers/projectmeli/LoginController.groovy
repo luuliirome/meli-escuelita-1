@@ -4,7 +4,7 @@ import projectmeli.Usuario;
 
 class LoginController {
 
-	static allowedMethods = [loginCheck: 'POST'	]
+	static allowedMethods = [login: 'POST'	]
 	
     def index() {
 		render(view: "/index")
@@ -12,8 +12,11 @@ class LoginController {
 	
 	def login(){
 		
+		//Esto esta harcodeado para probar un usuario
+		//def usuariou = new Usuario(mail:"Guido",password: "1234");
+		//usuariou.save();
 		if (Usuario.findByMailAndPassword(params.mail, params.password)){
-			def usuario = params;
+			//def usuario = params;
 			render(view: "/index", model: [texto: "Logueado"])
 		}
 		else{
