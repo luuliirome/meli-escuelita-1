@@ -12,7 +12,8 @@ class LoginController {
     
 	def login(){
 		
-
+		def usuario1 = new Usuario(mail:"guidomaceira@gmail.com", password:"1234");
+		usuario1.save();
 		Usuario user = UsuarioService.getUserByEmail(params.mail);
 		
 		if (user ==  null){
@@ -23,6 +24,7 @@ class LoginController {
 		}
 		else{
 			render(view: "/index", model: [texto: "Logueado"])
+
 		}
 	}
 

@@ -84,7 +84,7 @@
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 	
 		<div id="page-body" role="main">
-			<h1>Welcome to Meli</h1>
+			<h1><p>Welcome to Meli - ${mail}</p></h1>
 			<p>Congratulations!</p>
 		</div>
 	
@@ -100,7 +100,14 @@
 			<g:if test="${texto== 'Email no esta registrado'}">
 				 <font color="red">Email no esta registrado</font> 
 
+
 			</g:if>
 		</g:if>
+		<g:else>
+			<g:form action="login" controller="login" method="POST">
+			<input type="text" name="busqueda"> 
+			<button type="submit">Busqueda</button>
+			</g:form>
+		</g:else>
 	</body>
 </html>
