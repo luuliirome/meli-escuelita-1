@@ -1,5 +1,6 @@
 package projectmeli
 
+import projectmeli.LoginController;
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 

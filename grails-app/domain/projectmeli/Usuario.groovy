@@ -2,10 +2,10 @@ package projectmeli
 
 class Usuario {
 	
-	String username
+	String mail
 	String password
-    
-	static constraints = {
-		username size: 3..8
-    }
+	
+    static constraints = {
+   
+	}
 }

@@ -1,29 +1,25 @@
 package projectmeli
 
-class LoginController {
-	
-	static allowedMethods = [loginCheck: 'POST'	]
+import projectmeli.Usuario;
 
-    def login() {
-		
+class LoginController {
+
+	static allowedMethods = [loginCheck: 'POST'	]
+	
+    def index() {
+		render(view: "/index")
 	}
 	
-	def indexLogueado(){
+	def login(){
 		
-	}
-	
-	def loginCheck(){
-		def nuevoUsuario = new Usuario(username:"Guido",password:"1234");
-		nuevoUsuario.save();
-		if (Usuario.findByUsernameAndPassword(params.username, params.password)){
-			render (view: "/login/indexLogueado")
+		if (Usuario.findByMailAndPassword(params.mail, params.password)){
+			def usuario = params;
+			render(view: "/index", model: [texto: "Logueado"])
 		}
 		else{
-			render (view: "/login/error")
+			render(view: "/index", model: [texto: "Error de Logueo"])
 		}
 	}
+
 	
-	def error(){
-		
-	}
 }
