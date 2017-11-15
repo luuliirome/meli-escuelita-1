@@ -1,23 +1,27 @@
 package projectmeli
 
 import projectmeli.Usuario;
+import prueba.UsuarioService
 
 class LoginController {
+	
+	UsuarioService UsuarioService = new UsuarioService();
 
-	static allowedMethods = [loginCheck: 'POST'	]
+	static allowedMethods = [login: 'POST'	]
 	
-    def index() {
-		render(view: "/index")
-	}
-	
+    
 	def login(){
 		
-		if (Usuario.findByMailAndPassword(params.mail, params.password)){
-			def usuario = params;
-			render(view: "/index", model: [texto: "Logueado"])
+		Usuario user = UsuarioService.getUserByEmail(params.mail);
+		
+		if (user ==  null){
+			render(view: "/index", model: [texto: "Email no esta registrado"])
+		}
+		else if (user.password != params.password){
+			render(view: "/index", model: [texto: "Password Invalido"])
 		}
 		else{
-			render(view: "/index", model: [texto: "Error de Logueo"])
+			render(view: "/index", model: [texto: "Logueado"])
 		}
 	}
 
