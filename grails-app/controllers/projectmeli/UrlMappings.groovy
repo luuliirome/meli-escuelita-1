@@ -1,4 +1,4 @@
-package prueba
+package projectmeli
 
 class UrlMappings {
 	static mappings = {

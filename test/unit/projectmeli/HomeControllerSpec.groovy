@@ -1,5 +1,6 @@
-package prueba
+package projectmeli
 
+import projectmeli.HomeController;
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
