@@ -81,7 +81,7 @@ hibernate {
 environments {
 	development {
 		dataSource {
-			dbCreate = "update"
+			dbCreate = "create"
 			url = "jdbc:mysql://localhost/meli?useUnicode=yes&characterEncoding=UTF-8"
 			username = "root"
 			password = "curso"

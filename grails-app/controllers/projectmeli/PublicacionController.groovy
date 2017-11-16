@@ -15,12 +15,12 @@ class PublicacionController {
 	
 	def createPublication(){
 		Usuario user = UsuarioService.getUserByEmail(params.mail);
-		Publicacion publicacion = new Publicacion(autor: user,  titulo: params.titulo, precio: params.precio, detalles:params.detalles);
+		Publicacion publicacion = new Publicacion(autor: user,  titulo: params.titulo, precio: params.precio, detalles:params.detalles, nuevo: true);
 		PublicacionService.savePublication(publicacion);
-		render(view: "/index",model: [mail: params.mail, texto: "Logueado"]);
+		render(view: "/index", model: [mail: params.mail, texto: "Logueado"]);
 	}
 	
 	def cancelCreation(){
-		render(view: "/index");
+		render(view: "/index", model: [mail: params.mail, texto: "Logueado"]);
 	}
 }
