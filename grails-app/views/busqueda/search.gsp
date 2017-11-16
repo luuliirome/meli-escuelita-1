@@ -106,6 +106,7 @@ p {
 				
 				<th>Precio</th>
 				<th>Autor</th>
+				<th>Estado</th>
 				<th></th>
 			</tr>
 			<g:each var="each" in="${lista}">
@@ -119,12 +120,18 @@ p {
 					<td>
 						${each.autor.mail}
 					</td>
+					<td>
+						<g:if test="${each.nuevo == true}">Nuevo</g:if>
+						<g:else> Usado </g:else>
+					</td>
 					<td> 
 						<g:form method="POST" action="publicacion" controller="busqueda">
 							<input type="hidden" name="titulo" value="${each.titulo}">
 							<input type="hidden" name="detalles" value="${each.detalles}">
 							<input type="hidden" name="precio" value="${each.precio}">
 							<input type="hidden" name="autor" value="${each.autor.mail}">
+							<input type="hidden" name="url" value="${each.imagen}">
+							<input type="hidden" name="nuevo" value="${each.nuevo}">
 							<button type="submit">Ir</button>
 						</g:form>
 					</td>

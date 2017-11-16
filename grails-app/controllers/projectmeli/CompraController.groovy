@@ -5,8 +5,8 @@ class CompraController {
 	static allowedMethods = [index: 'POST'];
 	
     def index() { 
-		
-		render(view: "/compra/index", model: [autor: params.autor, titulo: params.titulo])
+		println params.url
+		render(view: "/compra/index", model: [url: params.url, nuevo: params.nuevo, autor: params.autor, titulo: params.titulo])
 	}
 	
 }
