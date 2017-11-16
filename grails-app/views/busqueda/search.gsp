@@ -120,8 +120,11 @@ p {
 						${each.autor.mail}
 					</td>
 					<td> 
-						<g:form method="POST" action="goToPublicacion">
-							<input type="hidden" name="publicacion" value="${each}">
+						<g:form method="POST" action="publicacion" controller="busqueda">
+							<input type="hidden" name="titulo" value="${each.titulo}">
+							<input type="hidden" name="detalles" value="${each.detalles}">
+							<input type="hidden" name="precio" value="${each.precio}">
+							<input type="hidden" name="autor" value="${each.autor.mail}">
 							<button type="submit">Ir</button>
 						</g:form>
 					</td>

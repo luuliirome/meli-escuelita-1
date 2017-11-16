@@ -2,7 +2,7 @@ package projectmeli
 
 class BusquedaController {
 	
-	static allowedMethods = [index: 'POST', goToPublicacion: 'POST'];
+	static allowedMethods = [index: 'POST', publicacion: 'POST'];
 	
 	PublicacionService PublicacionService = new PublicacionService();
 
@@ -14,7 +14,7 @@ class BusquedaController {
 		
 	}
 	
-	def goToPublicacion(){
-		render(view: "/publicacion", model:[publicacion:publicacion]);
+	def publicacion(){
+		render(view: "/publicacion/index", model:[autor: params.autor, titulo: params.titulo, precio: params.precio, detalles: params.detalles]);
 	}
 }

@@ -20,7 +20,7 @@ class LoginController {
 			render(view: "/index", model: [texto: "Password Invalido"])
 		}
 		else{
-			render(view: "/index", model: [texto: "Logueado"])
+			render(view: "/index", model: [texto: "Logueado", mail:params.mail])
 
 		}
 	}
