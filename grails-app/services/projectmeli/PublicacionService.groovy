@@ -9,4 +9,9 @@ class PublicacionService {
     List<Publicacion> getPublicacionesByKeyWord(String palabra){
 		return  Publicacion.findAllByTituloLike("%"+palabra+"%");
 	}
+	
+	void savePublication(Publicacion publicacion){
+	//	println "estoy pasando por guardar la publicacion \n";
+		publicacion.save();
+	}
 }
