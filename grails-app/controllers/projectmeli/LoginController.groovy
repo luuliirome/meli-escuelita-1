@@ -1,7 +1,6 @@
 package projectmeli
 
 import projectmeli.Usuario;
-import prueba.UsuarioService
 
 class LoginController {
 	

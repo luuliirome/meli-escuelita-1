@@ -1,4 +1,4 @@
-package prueba
+package projectmeli
 
 import grails.transaction.Transactional
 import projectmeli.Usuario
