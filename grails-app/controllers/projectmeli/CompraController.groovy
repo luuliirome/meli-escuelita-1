@@ -19,4 +19,9 @@ class CompraController {
 		render(view: "/compra/index", model: [url: params.url, nuevo: params.nuevo, autor: params.autor, titulo: params.titulo])
 	}
 	
+	def viewPurchases(){
+		List<Compra> compras = UsuarioService.getCompras(params.mail);
+		render(view : "/compra/showCompras", model: [mail: params.mail, compras: compras]);
+	}
+	
 }

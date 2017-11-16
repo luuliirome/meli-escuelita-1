@@ -143,6 +143,12 @@
 					<input type="hidden" name="mail" value = "${mail}"/>
 					<button type="submit">Crear Publicacion</button>
 				</g:form>
+				<br>
+				<g:form action="viewPurchases" controller="compra" method="POST">
+					<input type="hidden" name="mail" value = "${mail}"/>
+					<button type="submit">Ver Compras</button>
+				</g:form>
+				
 				</div>
 				
 			</g:else>
