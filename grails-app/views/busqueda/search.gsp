@@ -80,6 +80,20 @@
 		</style>
 	</head>
 	<body>
+	
+		<h1>
+		Resultado obtenido de buscar: ${palabra}</h1>
 		
+		<g:if test="${lista == null}"> No se obtuvieron resultados.</g:if>
+		
+			<g:each var="each" in="${lista}">
+		      	<tr>
+					<td>${each.titulo}</td>
+					<td>${each.autor}</td>
+					<td>${each.precio}</td>
+					<td>${each.detalles}</td>
+		      	</tr>	
+			</g:each>
+			
 	</body>
 </html>
