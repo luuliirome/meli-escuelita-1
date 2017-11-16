@@ -110,6 +110,8 @@
 			<input type="text" name="busqueda"> 
 			<button type="submit">Busqueda</button>
 			</g:form>
+			
+			
 		</g:else>
 	</body>
 </html>
