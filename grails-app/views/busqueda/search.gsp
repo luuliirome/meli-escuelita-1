@@ -110,6 +110,7 @@ p {
 				<th></th>
 			</tr>
 			<g:each var="each" in="${lista}">
+				<g:if test="${each.cantidad > 0}">
 				<tr>
 					<td>
 						${each.titulo}
@@ -136,6 +137,7 @@ p {
 						</g:form>
 					</td>
 				</tr>
+				</g:if>
 			</g:each>
 		</table>
 

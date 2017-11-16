@@ -97,6 +97,21 @@
 			<font color="black">Descripcion: </font> 
 			<input type="text" name="detalles">	
 			<br>
+			<br>
+			<font color="black">Imagen: </font> 
+			<input type="text" name="imagen">	
+			<br>
+			<br>
+			<font color="black">Cantidad: </font> 
+			<input type="text" name="cantidad">	
+			<br>
+			<br>
+			<font color="black">Estado: </font> 
+			<select name="nuevo">
+			    <option value="1">Nuevo</option>
+			    <option value="0">Usado</option>
+			 </select>
+			<br>
 			<input type="hidden" name="mail" value="${mail}"/>
 			<button type="submit">Crear</button>
 		</g:form>

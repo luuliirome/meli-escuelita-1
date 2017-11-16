@@ -14,4 +14,13 @@ class PublicacionService {
 	//	println "estoy pasando por guardar la publicacion \n";
 		publicacion.save();
 	}
+	
+	Publicacion finishSell(String titulo, Usuario autor){
+		
+		Publicacion p = Publicacion.findByTituloAndAutor(titulo,autor);
+		
+		p.cantidad --;
+		return p;
+		
+	}
 }
