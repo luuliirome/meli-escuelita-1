@@ -7,4 +7,7 @@ public class Publicacion {
 	Usuario autor;
 	double precio;
 	String detalles;	
+	int cantidad;
+	String imagen;
+	boolean nuevo;
 }

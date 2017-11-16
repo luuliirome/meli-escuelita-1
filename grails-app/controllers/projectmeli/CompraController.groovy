@@ -6,6 +6,7 @@ class CompraController {
 	
     def index() { 
 		
+		render(view: "/compra/index", model: [autor: params.autor, titulo: params.titulo])
 	}
 	
 }
