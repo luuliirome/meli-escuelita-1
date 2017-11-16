@@ -55,8 +55,10 @@
 //}
 
 dataSource {
+	username = "root"
+	password = "curso"
 	pooled = true
-	driverClassName = "com.mysql.jdbc.Driver"
+	driverClassName = "com.mysql.jdbc.Driver" 
 	dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
 }
 //dataSource {
@@ -82,7 +84,7 @@ environments {
 			dbCreate = "update"
 			url = "jdbc:mysql://localhost/meli?useUnicode=yes&characterEncoding=UTF-8"
 			username = "root"
-			password = ""
+			password = "curso"
 		}
 	}
 	test {
@@ -90,7 +92,7 @@ environments {
 			dbCreate = "create"
 			url = "jdbc:mysql://localhost/meli?useUnicode=yes&characterEncoding=UTF-8"
 			username = "root"
-			password = ""
+			password = "curso"
 		}
 	}
 	production {
