@@ -129,6 +129,7 @@
 				<div id="divBuscar" >
 					<g:form action="index" controller="busqueda" method="POST" >
 						<input type="text" name="busqueda">
+						<input type="hidden" name="usuario" value="${mail}">
 						<button type="submit">Busqueda</button>
 						<br>
 						<font color="black">Usado</font> 

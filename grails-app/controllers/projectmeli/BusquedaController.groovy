@@ -10,11 +10,11 @@ class BusquedaController {
 		
 		List<Publicacion> listaPublicaciones = PublicacionService.getPublicacionesByKeyWord(params.busqueda, params.nuevo == "on", params.usado == "on");
 		
-		render(view: "/busqueda/search", model:[lista:listaPublicaciones,palabra: params.busqueda]);
+		render(view: "/busqueda/search", model:[lista:listaPublicaciones,palabra: params.busqueda, usuario:params.usuario]);
 		
 	}
 	
 	def publicacion(){
-		render(view: "/publicacion/index", model:[url: params.url, nuevo: params.nuevo, autor: params.autor, titulo: params.titulo, precio: params.precio, detalles: params.detalles]);
+		render(view: "/publicacion/index", model:[url: params.url, nuevo: params.nuevo, autor: params.autor, titulo: params.titulo, precio: params.precio, detalles: params.detalles, usuario: params.usuario]);
 	}
 }

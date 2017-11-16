@@ -133,6 +133,7 @@ p {
 							<input type="hidden" name="autor" value="${each.autor.mail}">
 							<input type="hidden" name="url" value="${each.imagen}">
 							<input type="hidden" name="nuevo" value="${each.nuevo}">
+							<input type="hidden" name="usuario" value="${usuario}">
 							<button type="submit">Ir</button>
 						</g:form>
 					</td>
