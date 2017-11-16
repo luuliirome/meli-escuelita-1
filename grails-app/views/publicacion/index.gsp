@@ -100,6 +100,9 @@ p {
 		<h2>${autor}</h2>
 	</p>
 	
+	<div align="center">
+	<img src="${url}" height="250" width="250" border="2">
+	</div>
 	
 	<p>
 		${detalles}

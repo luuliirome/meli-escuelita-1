@@ -15,6 +15,6 @@ class BusquedaController {
 	}
 	
 	def publicacion(){
-		render(view: "/publicacion/index", model:[autor: params.autor, titulo: params.titulo, precio: params.precio, detalles: params.detalles]);
+		render(view: "/publicacion/index", model:[url: params.url, nuevo: params.nuevo, autor: params.autor, titulo: params.titulo, precio: params.precio, detalles: params.detalles]);
 	}
 }
