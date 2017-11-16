@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Welcome to Grails</title>
+		<title>Mali</title>
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #ff9e00;
@@ -114,7 +114,7 @@
 				</g:form>
 				
 				<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
-					<g:set var = "mailUsuario" value = "${mail}" scope = "session"/>
+					<input type="hidden" name="mail" value = "${mail}"/>
 					<button type="submit">Crear Publicacion</button>
 				</g:form>
 				
