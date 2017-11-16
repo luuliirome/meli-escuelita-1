@@ -16,7 +16,6 @@ class LoginController {
 		int cantidad;
 		String imagen;
 	
-	
 	def login(){
 		
 		Usuario user = UsuarioService.getUserByEmail(params.mail);

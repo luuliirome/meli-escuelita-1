@@ -112,6 +112,7 @@ p {
 	<g:form method="POST" action="index" controller="compra">
 		<input type="hidden" name="titulo" value="${titulo}" >
 		<input type="hidden" name="autor" value="${autor}">
+		<input type="hidden" name="usuario" value="${usuario}">
 		<button type="submit">Comprar</button>
 	</g:form>
 	</div>
