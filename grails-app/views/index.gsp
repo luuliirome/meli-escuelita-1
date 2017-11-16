@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Mali</title>
+		<title>Meli</title>
 		<style type="text/css" media="screen">
 			#status {
 				background-color: #ff9e00;
