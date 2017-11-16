@@ -86,30 +86,12 @@ p {
 		</g:form>
 	</div>
 	
-	<h2>
-		Estas a un paso de tener lo que queres!
-	___________________________________________________________________________________________________________
-		<br>
-	</h2>
-	
 	<div align="center">
-		<h7><font color="grey">${titulo}</font> </h7>
-	</div>
-	
-	<p>
-		<h2>${autor}</h2>
-	</p>
-	
-	
-	<p>
-		${detalles}
-	</p>
-	
-	<div align="right">
-	<g:form method="POST" action="index" controller="compra">
-		<input type="hidden" name="${titulo}" >
-		<button type="submit">Comprar</button>
-	</g:form>
+		<h2>
+			Felicidades! Ha comprado el articulo ${titulo}
+			<br>
+			Contactese con su comprador a: ${autor}
+		</h2>
 	</div>
 
 </body>
