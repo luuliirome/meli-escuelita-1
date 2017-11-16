@@ -8,7 +8,7 @@ class BusquedaController {
 
     def index() { 
 		
-		List<Publicacion> listaPublicaciones = PublicacionService.getPublicacionesByKeyWord(params.busqueda);
+		List<Publicacion> listaPublicaciones = PublicacionService.getPublicacionesByKeyWord(params.busqueda, params.nuevo == "on", params.usado == "on");
 		
 		render(view: "/busqueda/search", model:[lista:listaPublicaciones,palabra: params.busqueda]);
 		

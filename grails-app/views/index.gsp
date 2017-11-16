@@ -64,6 +64,23 @@
 				list-style-position: inside;
 				margin: 0.25em 0;
 			}
+			
+			#divBuscar {
+			    position:relative;
+			    float:left;
+			   	font-family: verdana;
+			    padding-left: 10px;
+			}
+			#divBotonesExtra {
+			    position:relative;
+			    float:right;
+			   	font-family: verdana;
+			    padding-left: 10px;
+			}
+			
+			#inputText{
+				border: 2px solid #E0E0E0;
+			}
 
 			@media screen and (max-width: 480px) {
 				#status {
@@ -108,15 +125,25 @@
 				</g:if>
 			</g:if>
 			<g:else>
-				<g:form action="index" controller="busqueda" method="POST">
-				<input type="text" name="busqueda">
-				<button type="submit">Busqueda</button>
-				</g:form>
 				
+				<div id="divBuscar" >
+					<g:form action="index" controller="busqueda" method="POST" >
+						<input type="text" name="busqueda">
+						<button type="submit">Busqueda</button>
+						<br>
+						<font color="black">Usado</font> 
+						<g:checkBox name = "usado"/>
+						<font color="black">Nuevo</font> 
+						<g:checkBox name = "nuevo"/>
+						
+					</g:form>
+				</div>
+				<div id="divBotonesExtra">
 				<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
 					<input type="hidden" name="mail" value = "${mail}"/>
 					<button type="submit">Crear Publicacion</button>
 				</g:form>
+				</div>
 				
 			</g:else>
 		</div>
