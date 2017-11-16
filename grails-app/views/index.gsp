@@ -83,39 +83,42 @@
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 	
-		<div id="page-body" role="main">
-			<h1><p>Welcome to Meli ss- ${mail}</p></h1>
-			<p>Congratulations!</p>
+		<div align="center">
+			<h1><p>¡Bienvenido a Meli ${mail}!</p></h1>
 		</div>
+		
+		<div align="center">
+			<g:if test="${texto != 'Logueado'}">
+				<g:form action="login" controller="login" method="POST">
+					Mail
+					<input type="text" name="mail"> <br>
+					<g:set var = "mailUsuario" value = "${mail}" scope = "session"/>
+					
+					Password
+					<input type="password" name="password"> <br>
+					<button type="submit">Log In</button>
+				</g:form>
+				<g:if test="${texto== 'Password Invalido'}">
+					 <font color="red">Contraseña Invalida</font> 
+				</g:if>
+				<g:if test="${texto== 'Email no esta registrado'}">
+					 <font color="red">Email no esta registrado</font> 
 	
-		<g:if test="${texto != 'Logueado'}">
-			<g:form action="login" controller="login" method="POST">
-				Mail
-				<input type="text" name="mail">
-				Password
-				<input type="password" name="password">
-				<button type="submit">Log In</button>
-			</g:form>
-			<g:if test="${texto== 'Password Invalido'}">
-				 <font color="red">Contraseña Invalida</font> 
+	
+				</g:if>
 			</g:if>
-			<g:if test="${texto== 'Email no esta registrado'}">
-				 <font color="red">Email no esta registrado</font> 
-
-			</g:if>
-		</g:if>
-		<g:else>
-			<g:form action="index" controller="busqueda" method="POST">
-			<input type="text" name="busqueda"> 
-			<button type="submit">Busqueda</button>
-			</g:form>
-			
-			<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
-			<input type="text" name="crearPublicacion"> 
-			<button type="submit">Crear Publicacion</button>
-			</g:form>
-			
-			
-		</g:else>
+			<g:else>
+				<g:form action="index" controller="busqueda" method="POST">
+				<input type="text" name="busqueda">
+				<button type="submit">Busqueda</button>
+				</g:form>
+				
+				<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
+					<g:set var = "mailUsuario" value = "${mail}" scope = "session"/>
+					<button type="submit">Crear Publicacion</button>
+				</g:form>
+				
+			</g:else>
+		</div>
 	</body>
 </html>

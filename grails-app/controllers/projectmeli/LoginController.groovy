@@ -11,11 +11,7 @@ class LoginController {
     
 	def login(){
 		
-		def usuario1 = new Usuario(mail:"guidomaceira@gmail.com", password:"1234");
-		usuario1.save();
-		Usuario user = UsuarioService.getUserByEmail(params.mail);
-		Publicacion publicacion = new Publicacion(titulo:"Guido", autor:usuario1, precio: 0.09, detalles:"Un chico especial :)");
-		publicacion.save();
+		Usuario user = UsuarioService.getUserByEmail(params.mail);		
 		
 		if (user ==  null){
 			render(view: "/index", model: [texto: "Email no esta registrado"])

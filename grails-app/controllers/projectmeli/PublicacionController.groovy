@@ -9,12 +9,14 @@ class PublicacionController {
 	}
 	
 	def redirectToPublicationView(){
-		render(view: "/publicacion/main", model: [usuario: params.mail]);
+		println params.mailUsuario;
+		render(view: "/publicacion/main", model: [mail: params.mail]);
 	}
 	
 	def createPublication(){
-		Usuario user = UsuarioService.getUserByEmail(params.mail);
-		Publicacion publicacion = new Publicacion(autor: user,  titulo: params.tiulo, precio: params.precio, desripcion:params.detalles);
+		println params.email
+		Usuario user = UsuarioService.getUserByEmail(params.email);
+		Publicacion publicacion = new Publicacion(autor: user,  titulo: params.titulo, precio: params.precio, detalles:params.detalles);
 		PublicacionService.savePublication(publicacion);
 		render(view: "/index");
 	}

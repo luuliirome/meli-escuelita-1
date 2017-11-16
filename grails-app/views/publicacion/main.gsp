@@ -97,7 +97,7 @@
 			<font color="black">Descripcion: </font> 
 			<input type="text" name="detalles">	
 			<br>
-			<input type="hidden" name="mail" value="${mail}">
+			<g:set var="email" value="${mail}"/>
 			<button type="submit">Crear</button>
 		</g:form>
 		<g:form method = "POST" action = "cancelCreation" controller = "publicacion">	
