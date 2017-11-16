@@ -84,38 +84,25 @@
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 	
 		<div id="page-body" role="main">
-			<h1><p>Welcome to Meli ss- ${mail}</p></h1>
-			<p>Congratulations!</p>
+			<h1><p>Creación de publicación</p></h1>
 		</div>
 	
-		<g:if test="${texto != 'Logueado'}">
-			<g:form action="login" controller="login" method="POST">
-				Mail
-				<input type="text" name="mail">
-				Password
-				<input type="password" name="password">
-				<button type="submit">Log In</button>
-			</g:form>
-			<g:if test="${texto== 'Password Invalido'}">
-				 <font color="red">Contraseña Invalida</font> 
-			</g:if>
-			<g:if test="${texto== 'Email no esta registrado'}">
-				 <font color="red">Email no esta registrado</font> 
-
-			</g:if>
-		</g:if>
-		<g:else>
-			<g:form action="index" controller="busqueda" method="POST">
-			<input type="text" name="busqueda"> 
-			<button type="submit">Busqueda</button>
-			</g:form>
-			
-			<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
-			<input type="text" name="crearPublicacion"> 
-			<button type="submit">Crear Publicacion</button>
-			</g:form>
-			
-			
-		</g:else>
+		<g:form method="POST" action = "createPublication" controller = "publicacion" >
+			<font color="black">Titulo: </font> 
+			<input type="text" name="titulo">
+			<br>
+			<font color="black">Precio: </font> 
+			<input type="number" name="precio">
+			<br>
+			<font color="black">Descripcion: </font> 
+			<input type="text" name="detalles">	
+			<br>
+			<input type="hidden" name="mail" value="${mail}">
+			<button type="submit">Crear</button>
+		</g:form>
+		<g:form method = "POST" action = "cancelCreation" controller = "publicacion">	
+			<button type="submit">Cancelar</button>
+		</g:form>
+		
 	</body>
 </html>
