@@ -14,7 +14,7 @@ class CalificacionController {
 		Usuario vendedor = UsuarioService.getUserByEmail(params.autor);
 		Publicacion pub = PublicacionService.finishSell(params.titulo,vendedor);
 		
-		TransaccionService.rateSeller(comprador, pub);
+		TransaccionService.rateSeller(comprador, pub,vendedor);
 		UsuarioService.rateUser(vendedor,params.calificacion.toInteger());
 		
 		List<Transaccion> compras = UsuarioService.getCompras(params.mail);

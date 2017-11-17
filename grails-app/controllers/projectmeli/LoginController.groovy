@@ -8,16 +8,15 @@ class LoginController {
 
 	static allowedMethods = [login: 'POST'	]
 	
-	String titulo;
-	//	List<Tag> tagsDeLaPublicacion = new LinkedList<Tag>();
-		Usuario autor;
-		double precio;
-		String detalles;
-		int cantidad;
-		String imagen;
+	def index(){
+		if(session.user != null){
+			render(view: "/index", model: [texto: "Logueado", mail:session.user])
+		}
+	}
 	
 	def login(){
-
+		
+		
 		
 		Usuario user = UsuarioService.getUserByEmail(params.mail);
 		
