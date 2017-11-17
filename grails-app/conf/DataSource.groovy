@@ -82,7 +82,7 @@ environments {
 	development {
 		dataSource {
 			
-			dbCreate = "udpate"
+			dbCreate = "update"
 			url = "jdbc:mysql://localhost/meli?useUnicode=yes&characterEncoding=UTF-8"
 			username = "root"
 			password = "curso"
