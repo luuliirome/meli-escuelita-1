@@ -121,7 +121,7 @@ p {
 						<g:else> Usado </g:else>
 					</td>
 					<td>
-						<g:if test="${!each.calificado}" >
+						<g:if test="${!each.calificadoVendedor}" >
 							<g:form method="POST" action="calificarVendedor" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">

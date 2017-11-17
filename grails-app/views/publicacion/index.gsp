@@ -109,7 +109,7 @@ p {
 	</p>
 	
 	<div align="right">
-	<g:form method="POST" action="index" controller="compra">
+	<g:form method="POST" action="index" controller="transaccion">
 		<input type="hidden" name="titulo" value="${titulo}" >
 		<input type="hidden" name="autor" value="${autor}">
 		<input type="hidden" name="usuario" value="${usuario}">

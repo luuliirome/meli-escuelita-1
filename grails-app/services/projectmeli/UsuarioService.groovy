@@ -10,9 +10,9 @@ class UsuarioService {
 	Usuario getUserByEmail(String email){
 		return Usuario.findByMail(email);
 	}
-	List<Compra> getCompras(String email){
+	List<Transaccion> getCompras(String email){
 		Usuario user = getUserByEmail(email);
-		return Compra.findAllByComprador(user);
+		return Transaccion.findAllByComprador(user);
 	}	
 	
 	void rateUser(Usuario user, int calificacion){

@@ -17,9 +17,9 @@ class LoginController {
 		String imagen;
 	
 	def login(){
+
 		
 		Usuario user = UsuarioService.getUserByEmail(params.mail);
-		
 		
 		if (user ==  null){
 			render(view: "/index", model: [texto: "Email no esta registrado"])

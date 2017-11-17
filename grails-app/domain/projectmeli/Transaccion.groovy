@@ -1,10 +1,12 @@
 package projectmeli
 
-class Compra {
+class Transaccion {
 	
 	Usuario comprador
 	Publicacion publicacion
-	boolean calificado
+	Usuario vendedor
+	boolean calificadoComprador
+	boolean calificadoVendedor
 
     static constraints = {
     }

@@ -5,23 +5,20 @@ import grails.transaction.Transactional
 @Transactional
 class TransaccionService {
 
-    void saveCompra(Compra c){
+    void saveTransaccion(Transaccion c){
 		c.save();
 	}
 	
-	void saveVenta(Venta v){
-		v.save();
-	}
 	
 	void rateSeller(Usuario comprador, Publicacion publi) {
-		Compra c = Compra.findByCompradorAndPublicacionAndCalificado(comprador,publi,false);
-		c.calificado=true;
+		Transaccion c = Transaccion.findByCompradorAndPublicacionAndCalificadoUsuario(comprador,publi,false);
+		c.calificadoVendedor=true;
 		c.save();
 	}
 	
 	void rateBuyer(Usuario vendedor, Publicacion publi, Usuario comprador) {
-		Venta v = Venta.findByVendedorAndPublicacionAndCompradorAndCalificado(vendedor,publi, comprador,false);
-		v.calificado=true;
+		Transaccion v = Venta.findByVendedorAndPublicacionAndCompradorAndCalificadoVendedor(vendedor,publi, comprador,false);
+		v.calificadoComprador=true;
 		v.save();
 	}
 }

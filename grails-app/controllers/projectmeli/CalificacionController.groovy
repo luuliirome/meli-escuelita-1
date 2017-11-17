@@ -17,8 +17,8 @@ class CalificacionController {
 		TransaccionService.rateSeller(comprador, pub);
 		UsuarioService.rateUser(vendedor,params.calificacion.toInteger());
 		
-		List<Compra> compras = UsuarioService.getCompras(params.mail);
-		render(view : "/compra/showCompras", model: [mail: params.mail, compras: compras]);
+		List<Transaccion> compras = UsuarioService.getCompras(params.mail);
+		render(view : "/transaccion/showCompras", model: [mail: params.mail, compras: compras]);
 		
 	}
 	
@@ -32,8 +32,8 @@ class CalificacionController {
 		UsuarioService.rateUser(comprador,params.calificacion.toInteger());
 		
 		
-		List<Compra> compras = UsuarioService.getCompras(params.mail);
-		render(view : "/compra/showCompras", model: [mail: params.mail, compras: compras]);
+		List<Transaccion> compras = UsuarioService.getCompras(params.mail);
+		render(view : "/transaccion/showCompras", model: [mail: params.mail, compras: compras]);
 		
 	}
 	

@@ -145,12 +145,12 @@
 					<button type="submit">Crear Publicacion</button>
 				</g:form>
 				<br>
-				<g:form action="viewPurchases" controller="compra" method="POST">
+				<g:form action="viewPurchases" controller="transaccion" method="POST">
 					<input type="hidden" name="mail" value = "${mail}"/>
 					<button type="submit">Ver Compras</button>
 				</g:form>
 				
-				<g:form action="viewSells" controller="compra" method="POST">
+				<g:form action="viewSells" controller="transaccion" method="POST">
 					<input type="hidden" name="mail" value = "${mail}"/>
 					<button type="submit">Ver Ventas</button>
 				</g:form>
