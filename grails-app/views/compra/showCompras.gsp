@@ -84,16 +84,18 @@ p {
 		Mis Compras:
 	</h1>
 
-	<g:if test="${compras.size() == 0 }"> No se han realizado compras.
-	
-	</g:if>
-	<g:else>
-		<div align="right">
+	<div align="right">
 		<g:form action="index" controller="busqueda" method="POST">
 		<input type="text" name="busqueda"> 
 		<button type="submit">Busqueda</button>
 		</g:form>
 	</div>
+	
+
+	<g:if test="${compras.size() == 0 }"> No se han realizado compras.
+	
+	</g:if>
+	<g:else>
 		<table>
 			<tr>
 				<th>Titulo</th>

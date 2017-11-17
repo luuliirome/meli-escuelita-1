@@ -11,7 +11,7 @@ class CompraController {
     def index() { 
 		
 		Usuario vendedor = UsuarioService.getUserByEmail(params.autor);
-		Usuario comprador = UsuarioService.getUserByEmail(params.usuario);
+		Usuario comprador = UsuarioService.getUserByEmail(session.user);
 		
 		Publicacion pub = PublicacionService.finishSell(params.titulo,vendedor);
 
