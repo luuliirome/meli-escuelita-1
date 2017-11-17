@@ -124,20 +124,16 @@ p {
 						<g:if test="${!each.calificado}" >
 							<g:form method="POST" action="calificarVendedor" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
-								<input type="hidden" name="detalles" value="${each.publicacion.detalles}">
-								<input type="hidden" name="precio" value="${each.publicacion.precio}">
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
-								<input type="hidden" name="url" value="${each.publicacion.imagen}">
-								<input type="hidden" name="nuevo" value="${each.publicacion.nuevo}">
+								<input type="hidden" name="mail" value="${mail}">
+								<input type="hidden" name="calificacion" value=1>
 								<button type="submit">↑</button>
 							</g:form>
 							<g:form method="POST" action="calificarVendedor" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
-								<input type="hidden" name="detalles" value="${each.publicacion.detalles}">
-								<input type="hidden" name="precio" value="${each.publicacion.precio}">
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
-								<input type="hidden" name="url" value="${each.publicacion.imagen}">
-								<input type="hidden" name="nuevo" value="${each.publicacion.nuevo}">
+								<input type="hidden" name="mail" value="${mail}">
+								<input type="hidden" name="calificacion" value=-1>
 								<button type="submit">↓</button>
 							</g:form>
 						</g:if>
