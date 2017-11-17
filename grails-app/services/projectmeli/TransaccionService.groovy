@@ -14,13 +14,13 @@ class TransaccionService {
 	}
 	
 	void rateSeller(Usuario comprador, Publicacion publi) {
-		Compra c = Compra.findByCompradorAndPublicacion(comprador,publi);
+		Compra c = Compra.findByCompradorAndPublicacionAndCalificado(comprador,publi,false);
 		c.calificado=true;
 		c.save();
 	}
 	
-	void rateBuyer(Usuario vendedor, Publicacion publi) {
-		Venta v = Venta.findByVendedorAndPublicacion(vendedor,publi);
+	void rateBuyer(Usuario vendedor, Publicacion publi, Usuario comprador) {
+		Venta v = Venta.findByVendedorAndPublicacionAndCompradorAndCalificado(vendedor,publi, comprador,false);
 		v.calificado=true;
 		v.save();
 	}

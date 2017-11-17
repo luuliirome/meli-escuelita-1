@@ -2,6 +2,7 @@ package projectmeli
 
 
 public class Publicacion {
+	
 	String titulo;
 //	List<Tag> tagsDeLaPublicacion = new LinkedList<Tag>();
 	Usuario autor;
@@ -10,4 +11,6 @@ public class Publicacion {
 	int cantidad;
 	String imagen;
 	boolean nuevo;
+	
+	
 }
