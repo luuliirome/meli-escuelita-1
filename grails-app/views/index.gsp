@@ -119,14 +119,15 @@
 			<h1><p>¡Bienvenido a Meli ${mail}!</p></h1>
 		</div>
 		
-		<div align="center">
+		<div align="center" class="box">
+			
 			<g:if test="${texto != 'Logueado'}">
 				<g:form action="login" controller="login" method="POST">
 					Mail
-					<input type="text" name="mail"> <br>
+					<input type="text" name="mail">
 					<g:set var = "mailUsuario" value = "${mail}" scope = "session"/>
 					
-					Password
+					Password: 
 					<input type="password" name="password"> <br>
 					<button type="submit">Log In</button>
 				</g:form>
@@ -136,7 +137,7 @@
 				<g:if test="${texto== 'Email no esta registrado'}">
 					 <font color="red">Email no esta registrado</font> 
 	
-	
+			
 				</g:if>
 			</g:if>
 			<g:else>
@@ -158,8 +159,7 @@
 						<font color="black">Usado</font> 
 						<g:checkBox name = "usado"/>
 						<font color="black">Nuevo</font> 
-						<g:checkBox name = "nuevo"/>
-						
+						<g:checkBox name = "nuevo"/>	
 					</g:form>
 				</div>
 				
