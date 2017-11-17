@@ -17,5 +17,6 @@ class UsuarioService {
 	
 	void rateUser(Usuario user, int calificacion){
 		user.calificacion += calificacion;
+		user.save();
 	}
 }

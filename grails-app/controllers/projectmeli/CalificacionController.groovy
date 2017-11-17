@@ -14,7 +14,7 @@ class CalificacionController {
 		Publicacion pub = PublicacionService.finishSell(params.titulo,vendedor);
 		
 		TransaccionService.rateSeller(vendedor, pub);
-		UsuarioService.rateUser(vendedor,params.calificacion);
+		UsuarioService.rateUser(vendedor,params.calificacion.toInteger());
 		
 		List<Compra> compras = UsuarioService.getCompras(params.mail);
 		render(view : "/compra/showCompras", model: [mail: params.mail, compras: compras]);
@@ -27,7 +27,7 @@ class CalificacionController {
 		Publicacion pub = PublicacionService.finishSell(params.titulo,comprador);
 		
 		TransaccionService.rateBuyer(comprador, pub);
-		UsuarioService.rateUser(comprador,params.calificacion);
+		UsuarioService.rateUser(comprador,params.calificacion.toInteger());
 		
 		
 		List<Compra> compras = UsuarioService.getCompras(params.mail);
