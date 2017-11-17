@@ -14,4 +14,8 @@ class UsuarioService {
 		Usuario user = getUserByEmail(email);
 		return Compra.findAllByComprador(user);
 	}	
+	
+	void rateUser(Usuario user, int calificacion){
+		user.calificacion += calificacion;
+	}
 }

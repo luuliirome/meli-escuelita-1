@@ -11,11 +11,11 @@ class CompraController {
 		Usuario vendedor = UsuarioService.getUserByEmail(params.autor);
 		Usuario comprador = UsuarioService.getUserByEmail(params.usuario);
 		println params.usuario;
-		Publicacion pub = PublicacionService.finishSell(params.titulo,user);
+		Publicacion pub = PublicacionService.finishSell(params.titulo,vendedor);
 		
-		Venta venta = new Venta(comprador: comprador, publicacion: pub, vendedor: vendedor);
+		Venta venta = new Venta(comprador: comprador, publicacion: pub, vendedor: vendedor, calificado:false);
 		venta.save();
-		Compra compra = new Compra(comprador: comprador, publicacion: pub);
+		Compra compra = new Compra(comprador: comprador, publicacion: pub, calificado:false);
 		compra.save();
 		
 		
