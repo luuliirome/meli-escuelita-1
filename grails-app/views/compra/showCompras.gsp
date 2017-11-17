@@ -121,8 +121,8 @@ p {
 						<g:else> Usado </g:else>
 					</td>
 					<td>
-						<g:if test="${each.calificado}" >
-							<g:form method="POST" action="publicacion" controller="busqueda">
+						<g:if test="${!each.calificado}" >
+							<g:form method="POST" action="calificarVendedor" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
 								<input type="hidden" name="detalles" value="${each.publicacion.detalles}">
 								<input type="hidden" name="precio" value="${each.publicacion.precio}">
@@ -131,7 +131,7 @@ p {
 								<input type="hidden" name="nuevo" value="${each.publicacion.nuevo}">
 								<button type="submit">↑</button>
 							</g:form>
-							<g:form method="POST" action="publicacion" controller="busqueda">
+							<g:form method="POST" action="calificarVendedor" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
 								<input type="hidden" name="detalles" value="${each.publicacion.detalles}">
 								<input type="hidden" name="precio" value="${each.publicacion.precio}">

@@ -8,12 +8,11 @@ class CompraController {
 	TransaccionService TransaccionService = new TransaccionService();
 	
 	
-	
     def index() { 
 		
 		Usuario vendedor = UsuarioService.getUserByEmail(params.autor);
 		Usuario comprador = UsuarioService.getUserByEmail(params.usuario);
-		println params.usuario;
+		
 		Publicacion pub = PublicacionService.finishSell(params.titulo,vendedor);
 
 		Venta venta = new Venta(comprador: comprador, publicacion: pub, vendedor: vendedor);
