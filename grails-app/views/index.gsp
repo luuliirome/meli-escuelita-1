@@ -154,22 +154,7 @@
 						
 					</g:form>
 				</div>
-				<div id="divBotonesExtra">
-				<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
-					<input type="hidden" name="mail" value = "${mail}"/>
-					<button class="button"  type="submit">Crear Publicacion</button>
-				</g:form>
-				<g:form action="viewPurchases" controller="transaccion" method="POST">
-					<input type="hidden" name="mail" value = "${mail}"/>
-					<button class="button"  type="submit">Ver Compras</button>
-				</g:form>
-				<a>
-				<g:form action="viewSells" controller="transaccion" method="POST">
-					<input type="hidden" name="mail" value = "${mail}"/>
-					<button class="button" type="submit">Ver Ventas</button>
-				</g:form>
-				</a>
-				</div>
+				
 				
 			</g:else>
 		</div>

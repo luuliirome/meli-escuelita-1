@@ -107,7 +107,7 @@ p {
 	<p>
 		${detalles}
 	</p>
-	
+	<g:if test="${session.user != autor}">
 	<div align="right">
 	<g:form method="POST" action="index" controller="transaccion">
 		<input type="hidden" name="titulo" value="${titulo}" >
@@ -116,6 +116,7 @@ p {
 		<button type="submit">Comprar</button>
 	</g:form>
 	</div>
+	</g:if>
 
 </body>
 </html>
