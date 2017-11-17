@@ -101,7 +101,7 @@ p {
 				<th>Titulo</th>
 				
 				<th>Precio</th>
-				<th>Autor</th>
+				<th>Comprador</th>
 				<th>Estado</th>
 				<th>Calificar</th>
 				<th></th>
@@ -116,7 +116,7 @@ p {
 						${each.publicacion.precio}
 					</td>
 					<td>
-						${each.publicacion.autor.mail}
+						${each.comprador.mail}
 					</td>
 					<td>
 						<g:if test="${each.publicacion.nuevo == true}">Nuevo</g:if>
@@ -126,15 +126,15 @@ p {
 						<g:if test="${!each.calificadoComprador}" >
 							<g:form method="POST" action="calificarComprador" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
-								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
-								<input type="hidden" name="mail" value="${mail}">
+								<input type="hidden" name="comprador" value="${each.comprador.mail}">
+								<input type="hidden" name="vendedor" value="${mail}">
 								<input type="hidden" name="calificacion" value=1>
 								<button type="submit">↑</button>
 							</g:form>
 							<g:form method="POST" action="calificarComprador" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
-								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
-								<input type="hidden" name="mail" value="${mail}">
+								<input type="hidden" name="comprador" value="${each.comprador.mail}">
+								<input type="hidden" name="vendedor" value="${mail}">
 								<input type="hidden" name="calificacion" value=-1>
 								<button type="submit">↓</button>
 							</g:form>

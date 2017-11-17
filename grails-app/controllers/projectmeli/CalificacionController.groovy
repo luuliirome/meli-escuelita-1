@@ -12,7 +12,7 @@ class CalificacionController {
 		
 		Usuario comprador = UsuarioService.getUserByEmail(params.mail);
 		Usuario vendedor = UsuarioService.getUserByEmail(params.autor);
-		Publicacion pub = PublicacionService.finishSell(params.titulo,vendedor);
+		Publicacion pub = PublicacionService.getPublicacion(params.titulo,vendedor);
 		
 		TransaccionService.rateSeller(comprador, pub,vendedor);
 		UsuarioService.rateUser(vendedor,params.calificacion.toInteger());
@@ -24,16 +24,16 @@ class CalificacionController {
 	
 	def calificarComprador(){
 		
-		Usuario comprador = UsuarioService.getUserByEmail(params.mail);
-		Usuario vendedor = UsuarioService.getUserByEmail(params.autor);
-		Publicacion pub = PublicacionService.finishSell(params.titulo,comprador);
+		Usuario comprador = UsuarioService.getUserByEmail(params.comprador);
+		Usuario vendedor = UsuarioService.getUserByEmail(params.vendedor);
+		Publicacion pub = PublicacionService.getPublicacion(params.titulo,vendedor);
 		
 		TransaccionService.rateBuyer(vendedor, pub,comprador);
 		UsuarioService.rateUser(comprador,params.calificacion.toInteger());
 		
 		
-		List<Transaccion> compras = UsuarioService.getCompras(params.mail);
-		render(view : "/transaccion/showCompras", model: [mail: params.mail, compras: compras]);
+		List<Transaccion> ventas = UsuarioService.getVentas(params.mail);
+		render(view : "/transaccion/showVentas", model: [mail: params.mail, ventas: ventas]);
 		
 	}
 	

@@ -96,15 +96,24 @@ p {
 		<h7><font color="grey">${titulo}</font> </h7>
 	</div>
 	
-	${precio}
-	
-	<div align="center">
+	<table>
+<tbody>
+<tr>
+<td>
 	<img src="${url}" height="250" width="250" border="2">
-	</div>
+</td>
+<td>
+	<h2>Precio:</h2> <p style="color:green;">${precio}</p>
+	<h2>Detalles:</h2><p>${detalles}</p>
+</td>
+</tr>
+</tbody>
+</table>
 	
-	<p>
-		${detalles}
-	</p>
+	
+	
+	
+	
 	<g:if test="${session.user != autor}">
 	<div align="right">
 	<g:form method="POST" action="index" controller="transaccion">
@@ -115,6 +124,6 @@ p {
 	</g:form>
 	</div>
 	</g:if>
-
+	
 </body>
 </html>

@@ -28,7 +28,15 @@ class PublicacionService {
 		Publicacion p = Publicacion.findByTituloAndAutor(titulo,autor);
 		
 		p.cantidad --;
+		p.save();
 		return p;
 		
 	}
+	
+	Publicacion getPublicacion(String titulo, Usuario autor){
+		
+		Publicacion p = Publicacion.findByTituloAndAutor(titulo,autor);
+		return p;
+	}
+
 }
