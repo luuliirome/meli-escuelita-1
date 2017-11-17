@@ -28,6 +28,8 @@ class LoginController {
 			render(view: "/index", model: [texto: "Password Invalido"])
 		}
 		else{
+			session.user = params.mail;
+			
 			render(view: "/index", model: [texto: "Logueado", mail:params.mail])
 
 		}
