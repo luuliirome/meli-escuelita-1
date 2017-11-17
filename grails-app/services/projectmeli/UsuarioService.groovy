@@ -15,6 +15,11 @@ class UsuarioService {
 		return Transaccion.findAllByComprador(user);
 	}	
 	
+	List<Transaccion> getVentas(String email){
+		Usuario user = getUserByEmail(email);
+		return Transaccion.findAllByVendedor(user);
+	}
+	
 	void rateUser(Usuario user, int calificacion){
 		user.calificacion += calificacion;
 		user.save();

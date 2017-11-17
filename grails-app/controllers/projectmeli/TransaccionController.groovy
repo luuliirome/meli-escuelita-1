@@ -27,4 +27,9 @@ class TransaccionController {
 		render(view : "/transaccion/showCompras", model: [mail: params.mail, compras: compras]);
 	}
 	
+	def viewSells(){
+		List<Transaccion> ventas = UsuarioService.getVentas(params.mail);
+		render(view : "/transaccion/showVentas", model: [mail: params.mail, ventas: ventas]);
+	}
+	
 }

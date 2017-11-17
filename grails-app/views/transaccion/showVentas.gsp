@@ -81,19 +81,21 @@ p {
 <body>
 
 	<h1>
-		Mis Compras:
+		Mis Ventas:
 	</h1>
 
-	<g:if test="${compras.size() == 0 }"> No se han realizado compras.
-	
-	</g:if>
-	<g:else>
-		<div align="right">
+	<div align="right">
 		<g:form action="index" controller="busqueda" method="POST">
 		<input type="text" name="busqueda"> 
 		<button type="submit">Busqueda</button>
 		</g:form>
 	</div>
+	
+
+	<g:if test="${ventas.size() == 0 }"> No se han realizado ventas.
+	
+	</g:if>
+	<g:else>
 		<table>
 			<tr>
 				<th>Titulo</th>
@@ -104,7 +106,7 @@ p {
 				<th>Calificar</th>
 				<th></th>
 			</tr>
-			<g:each var="each" in="${compras}">
+			<g:each var="each" in="${ventas}">
 				<g:if test="${each.publicacion.cantidad > 0}">
 				<tr>
 					<td>
@@ -121,15 +123,15 @@ p {
 						<g:else> Usado </g:else>
 					</td>
 					<td>
-						<g:if test="${!each.calificado}" >
-							<g:form method="POST" action="calificarVendedor" controller="calificacion">
+						<g:if test="${!each.calificadoComprador}" >
+							<g:form method="POST" action="calificarComprador" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
 								<input type="hidden" name="mail" value="${mail}">
 								<input type="hidden" name="calificacion" value=1>
 								<button type="submit">↑</button>
 							</g:form>
-							<g:form method="POST" action="calificarVendedor" controller="calificacion">
+							<g:form method="POST" action="calificarComprador" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
 								<input type="hidden" name="mail" value="${mail}">
