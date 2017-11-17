@@ -54,6 +54,21 @@
 				line-height: 1.5;
 				margin: 0.25em 0;
 			}
+			
+			.button {
+			    background-color:#9370DB;
+			    border: none;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    margin: 4px 2px;
+			    cursor: pointer;
+			    weight: 40px;
+			    heigh: 20px;
+			}
 
 			#controller-list ul {
 				list-style-position: inside;
@@ -130,7 +145,7 @@
 					<g:form action="index" controller="busqueda" method="POST" >
 						<input type="text" name="busqueda">
 						<input type="hidden" name="usuario" value="${mail}">
-						<button type="submit">Busqueda</button>
+						<button  type="submit">Busqueda</button>
 						<br>
 						<font color="black">Usado</font> 
 						<g:checkBox name = "usado"/>
@@ -142,19 +157,18 @@
 				<div id="divBotonesExtra">
 				<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
 					<input type="hidden" name="mail" value = "${mail}"/>
-					<button type="submit">Crear Publicacion</button>
+					<button class="button"  type="submit">Crear Publicacion</button>
 				</g:form>
-				<br>
 				<g:form action="viewPurchases" controller="transaccion" method="POST">
 					<input type="hidden" name="mail" value = "${mail}"/>
-					<button type="submit">Ver Compras</button>
+					<button class="button"  type="submit">Ver Compras</button>
 				</g:form>
-				
+				<a>
 				<g:form action="viewSells" controller="transaccion" method="POST">
 					<input type="hidden" name="mail" value = "${mail}"/>
-					<button type="submit">Ver Ventas</button>
+					<button class="button" type="submit">Ver Ventas</button>
 				</g:form>
-				
+				</a>
 				</div>
 				
 			</g:else>
