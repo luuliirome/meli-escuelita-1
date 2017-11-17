@@ -8,6 +8,11 @@ class LoginController {
 
 	static allowedMethods = [login: 'POST'	]
 	
+	def desloguearse(){
+		session.user = null;
+		render(view: "/index", model: [texto: ""])
+	}
+	
 	def index(){
 		if(session.user != null){
 			render(view: "/index", model: [texto: "Logueado", mail:session.user])
