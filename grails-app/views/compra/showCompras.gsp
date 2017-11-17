@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta name="layout" content="main" />
-<title>Busqueda</title>
+<title>Mis Compras</title>
 <style type="text/css" media="screen">
 #status {
 	background-color: #efe;
@@ -101,32 +101,55 @@ p {
 				<th>Precio</th>
 				<th>Autor</th>
 				<th>Estado</th>
+				<th>Calificar</th>
 				<th></th>
 			</tr>
 			<g:each var="each" in="${compras}">
-				<g:if test="${each.cantidad > 0}">
+				<g:if test="${each.publicacion.cantidad > 0}">
 				<tr>
 					<td>
-						${each.titulo}
+						${each.publicacion.titulo}
 					</td>
 					<td>
-						${each.precio}
+						${each.publicacion.precio}
 					</td>
 					<td>
-						${each.autor.mail}
+						${each.publicacion.autor.mail}
 					</td>
 					<td>
-						<g:if test="${each.nuevo == true}">Nuevo</g:if>
+						<g:if test="${each.publicacion.nuevo == true}">Nuevo</g:if>
 						<g:else> Usado </g:else>
+					</td>
+					<td>
+						<g:if test="${each.calificado}" >
+							<g:form method="POST" action="publicacion" controller="busqueda">
+								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
+								<input type="hidden" name="detalles" value="${each.publicacion.detalles}">
+								<input type="hidden" name="precio" value="${each.publicacion.precio}">
+								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
+								<input type="hidden" name="url" value="${each.publicacion.imagen}">
+								<input type="hidden" name="nuevo" value="${each.publicacion.nuevo}">
+								<button type="submit">↑</button>
+							</g:form>
+							<g:form method="POST" action="publicacion" controller="busqueda">
+								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
+								<input type="hidden" name="detalles" value="${each.publicacion.detalles}">
+								<input type="hidden" name="precio" value="${each.publicacion.precio}">
+								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
+								<input type="hidden" name="url" value="${each.publicacion.imagen}">
+								<input type="hidden" name="nuevo" value="${each.publicacion.nuevo}">
+								<button type="submit">↓</button>
+							</g:form>
+						</g:if>
 					</td>
 					<td> 
 						<g:form method="POST" action="publicacion" controller="busqueda">
-							<input type="hidden" name="titulo" value="${each.titulo}">
-							<input type="hidden" name="detalles" value="${each.detalles}">
-							<input type="hidden" name="precio" value="${each.precio}">
-							<input type="hidden" name="autor" value="${each.autor.mail}">
-							<input type="hidden" name="url" value="${each.imagen}">
-							<input type="hidden" name="nuevo" value="${each.nuevo}">
+							<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
+							<input type="hidden" name="detalles" value="${each.publicacion.detalles}">
+							<input type="hidden" name="precio" value="${each.publicacion.precio}">
+							<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
+							<input type="hidden" name="url" value="${each.publicacion.imagen}">
+							<input type="hidden" name="nuevo" value="${each.publicacion.nuevo}">
 							<button type="submit">Ir</button>
 						</g:form>
 					</td>
