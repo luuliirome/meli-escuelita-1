@@ -35,6 +35,30 @@
 	height: 30px;
 }
 
+.buttonGreen {
+	background-color: #7ecc31;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+}
+
+.buttonRed {
+	background-color: #f02d2d;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+}
+
 #status ul {
 	font-size: 0.9em;
 	list-style-type: none;
@@ -141,14 +165,14 @@ p {
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
 								<input type="hidden" name="mail" value="${mail}">
 								<input type="hidden" name="calificacion" value=1>
-								<button class="button" type="submit">↑</button>
+								<button class="buttonGreen" type="submit">↑</button>
 							</g:form>
 							<g:form method="POST" action="calificarVendedor" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
 								<input type="hidden" name="mail" value="${mail}">
 								<input type="hidden" name="calificacion" value=-1>
-								<button class="button" type="submit">↓</button>
+								<button class="buttonRed" type="submit">↓</button>
 							</g:form>
 						</g:if>
 					</td>
