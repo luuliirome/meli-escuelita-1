@@ -96,9 +96,7 @@ p {
 		<h7><font color="grey">${titulo}</font> </h7>
 	</div>
 	
-	<p>
-		<h2>${autor}</h2>
-	</p>
+	${precio}
 	
 	<div align="center">
 	<img src="${url}" height="250" width="250" border="2">
