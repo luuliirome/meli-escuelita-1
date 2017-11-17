@@ -142,6 +142,14 @@
 			</g:if>
 			<g:else>
 				
+				<div id="divDesloguearse" >
+					<g:form action="desloguearse" controller="login" method="POST" >
+	
+						<button  type="submit">Desloguearse</button>
+						<br>
+					</g:form>
+				</div>
+				
 				<div id="divBuscar" >
 					<g:form action="index" controller="busqueda" method="POST" >
 						<input type="text" name="busqueda">
@@ -154,6 +162,28 @@
 						<g:checkBox name = "nuevo"/>	
 					</g:form>
 				</div>
+				
+				<div id="divBotonesExtra">
+ 				<g:form action="redirectToPublicationView" controller="publicacion" method="POST">
+ 					<input type="hidden" name="mail" value = "${mail}"/>
+
+					<button class="button"  type="submit">Crear Publicacion</button>
+ 				</g:form>
+
+ 				<g:form action="viewPurchases" controller="transaccion" method="POST">
+ 					<input type="hidden" name="mail" value = "${mail}"/>
+
+					<button class="button"  type="submit">Ver Compras</button>
+ 				</g:form>
+				
+				<a>
+ 				<g:form action="viewSells" controller="transaccion" method="POST">
+ 					<input type="hidden" name="mail" value = "${mail}"/>
+
+					<button class="button" type="submit">Ver Ventas</button>
+ 				</g:form>
+
+ 				</div>
 				
 				
 			</g:else>
