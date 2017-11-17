@@ -17,6 +17,18 @@
 	border-radius: 0.6em;
 }
 
+.button {
+	background-color: #0c0ca5;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+}
+
 .ie6 #status {
 	display: inline;
 	/* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
@@ -82,7 +94,7 @@ p {
 		<div align="right">
 		<g:form action="index" controller="busqueda" method="POST">
 		<input type="text" name="busqueda"> 
-		<button type="submit">Busqueda</button>
+		<button class="button" type="submit">Busqueda</button>  &nbsp;
 		</g:form>
 	</div>
 	

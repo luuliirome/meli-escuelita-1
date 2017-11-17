@@ -22,6 +22,18 @@
 	/* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 }
 
+.button {
+	background-color: #0c0ca5;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+}
+
 #status ul {
 	font-size: 0.9em;
 	list-style-type: none;
@@ -82,15 +94,23 @@ p {
 		<div align="right">
 		<g:form action="index" controller="busqueda" method="POST">
 		<input type="text" name="busqueda"> 
-		<button type="submit">Busqueda</button>
+		<button class="button" type="submit">Busqueda</button>  &nbsp;
 		</g:form>
 	</div>
-	
+	<g:if test="${session.user != autor}">
 	<h2>
 		Estas a un paso de tener lo que queres!
 	___________________________________________________________________________________________________________
 		<br>
 	</h2>
+	</g:if>
+	<g:else>
+	<h2>
+		Chequea tu publicacion
+	___________________________________________________________________________________________________________
+		<br>
+	</h2>
+	</g:else>
 	
 	<div align="center">
 		<h7><font color="grey">${titulo}</font> </h7>
@@ -120,7 +140,7 @@ p {
 		<input type="hidden" name="titulo" value="${titulo}" >
 		<input type="hidden" name="autor" value="${autor}">
 		<input type="hidden" name="usuario" value="${usuario}">
-		<button type="submit">Comprar</button>
+		<button class="button" type="submit">Comprar</button>
 	</g:form>
 	</div>
 	</g:if>

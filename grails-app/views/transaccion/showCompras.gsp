@@ -23,6 +23,18 @@
 	/* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 }
 
+.button {
+	background-color: #0c0ca5;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+}
+
 #status ul {
 	font-size: 0.9em;
 	list-style-type: none;
@@ -87,7 +99,7 @@ p {
 	<div align="right">
 		<g:form action="index" controller="busqueda" method="POST">
 		<input type="text" name="busqueda"> 
-		<button type="submit">Busqueda</button>
+		<button class="button" type="submit">Busqueda</button>  &nbsp;
 		</g:form>
 	</div>
 	
@@ -129,14 +141,14 @@ p {
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
 								<input type="hidden" name="mail" value="${mail}">
 								<input type="hidden" name="calificacion" value=1>
-								<button type="submit">↑</button>
+								<button class="button" type="submit">↑</button>
 							</g:form>
 							<g:form method="POST" action="calificarVendedor" controller="calificacion">
 								<input type="hidden" name="titulo" value="${each.publicacion.titulo}">
 								<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
 								<input type="hidden" name="mail" value="${mail}">
 								<input type="hidden" name="calificacion" value=-1>
-								<button type="submit">↓</button>
+								<button class="button" type="submit">↓</button>
 							</g:form>
 						</g:if>
 					</td>
@@ -148,7 +160,7 @@ p {
 							<input type="hidden" name="autor" value="${each.publicacion.autor.mail}">
 							<input type="hidden" name="url" value="${each.publicacion.imagen}">
 							<input type="hidden" name="nuevo" value="${each.publicacion.nuevo}">
-							<button type="submit">Ir</button>
+							<button class="button" type="submit">Ir</button>
 						</g:form>
 					</td>
 				</tr>

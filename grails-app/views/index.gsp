@@ -133,7 +133,7 @@ p {
 					Password: 
 					<input type="password" name="password">
 				&nbsp;
-				<button class="button" type="submit">Log In</button>
+				<button class="button" class="button" type="submit">Log In</button>
 			</g:form>
 			<g:if test="${texto== 'Password Invalido'}">
 				<font color="red">Contraseña Invalida</font>
@@ -148,7 +148,7 @@ p {
 				<div id="divDesloguearse">
 					<g:form action="desloguearse" controller="login" method="POST">
 
-						<button class="button" type="submit">Desloguearse</button> &nbsp;
+						<button class="button" class="button" type="submit">Desloguearse</button> &nbsp;
 							<br>
 					</g:form>
 				</div>
@@ -159,7 +159,7 @@ p {
 					method="POST">
 					<input type="hidden" name="mail" value="${mail}" />
 
-					&nbsp; <button class="button" type="submit">Crear Publicacion</button> &nbsp;
+					&nbsp; <button class="button" class="button" type="submit">Crear Publicacion</button> &nbsp;
 	 				</g:form>
 			</div>
 
@@ -168,7 +168,7 @@ p {
 					method="POST">
 					<input type="hidden" name="mail" value="${mail}" />
 
-					<button class="button" type="submit">Ver Compras</button> &nbsp;
+					<button class="button" class="button" type="submit">Ver Compras</button> &nbsp;
 	 				</g:form>
 			</div>
 
@@ -176,7 +176,7 @@ p {
 				<g:form action="viewSells" controller="transaccion" method="POST">
 					<input type="hidden" name="mail" value="${mail}" />
 
-					<button class="button" type="submit">Ver Ventas</button>
+					<button class="button" class="button" type="submit">Ver Ventas</button>
 				</g:form>
 			</div>
 		
@@ -190,7 +190,7 @@ p {
 				<g:form action="index" controller="busqueda" method="POST">
 					<input type="text" name="busqueda">
 					<input type="hidden" name="usuario" value="${mail}">
-					<button class="button" type="submit">Busqueda</button> &nbsp;
+					<button class="button" class="button" type="submit">Busqueda</button> &nbsp;
 					<br>
 					<font color="black">Usado</font>
 					<g:checkBox name="usado" />

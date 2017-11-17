@@ -22,6 +22,17 @@
 	display: inline;
 	/* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 }
+.button {
+	background-color: #0c0ca5;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+}
 
 #status ul {
 	font-size: 0.9em;
@@ -89,7 +100,7 @@ p {
 		<div align="right">
 		<g:form action="index" controller="busqueda" method="POST">
 		<input type="text" name="busqueda"> 
-		<button type="submit">Busqueda</button>
+		<button class="button" type="submit">Busqueda</button>
 		</g:form>
 	</div>
 	</g:if>
@@ -97,7 +108,7 @@ p {
 		<div align="right">
 		<g:form action="index" controller="busqueda" method="POST">
 		<input type="text" name="busqueda"> 
-		<button type="submit">Busqueda</button>
+		<button class="button" type="submit">Busqueda</button>  &nbsp;
 		</g:form>
 	</div>
 		<table>
@@ -134,7 +145,7 @@ p {
 							<input type="hidden" name="url" value="${each.imagen}">
 							<input type="hidden" name="nuevo" value="${each.nuevo}">
 							<input type="hidden" name="usuario" value="${usuario}">
-							<button type="submit">Ir</button>
+							<button class="button" type="submit">Ir</button>
 						</g:form>
 					</td>
 				</tr>

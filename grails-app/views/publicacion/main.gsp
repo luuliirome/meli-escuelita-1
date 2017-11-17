@@ -22,6 +22,18 @@
 			.ie6 #status {
 				display: inline; /* float double margin fix http://www.positioniseverything.net/explorer/doubled-margin.html */
 			}
+			
+			.button {
+	background-color: #0c0ca5;
+	border: none;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	height: 30px;
+}
 
 			#status ul {
 				font-size: 0.9em;
@@ -113,10 +125,10 @@
 			 </select>
 			<br>
 			<input type="hidden" name="mail" value="${mail}"/>
-			<button type="submit">Crear</button>
+			<button class="button" type="submit">Crear</button>
 		</g:form>
 		<g:form method = "POST" action = "cancelCreation" controller = "publicacion">	
-			<button type="submit">Cancelar</button>
+			<button class="button" type="submit">Cancelar</button>
 		</g:form>
 		
 	</body>
